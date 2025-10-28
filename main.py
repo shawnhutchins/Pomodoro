@@ -26,5 +26,4 @@ tomato_img = PhotoImage(file="tomato.png")
 canvas.create_image(100, 112, image=tomato_img)
 canvas.pack()
 
-
 window.mainloop()
