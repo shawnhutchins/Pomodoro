@@ -30,9 +30,14 @@ canvas.create_text(100, 130, text="00:00", fill="white", font=(FONT_NAME, 35, "b
 canvas.pack()
 
 #Timer label
+timer_label = tk.Label(text="Timer")
 
 #Label for checkmarks for each session completed, make green with fg=, find check from wiki
+checkmarks = tk.Label(text="✓")
 
 #start and restart buttons
+start_button = tk.Button(text="Start")
+
+restart_button = tk.Button(text="Restart")
 
 window.mainloop()
