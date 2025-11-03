@@ -26,18 +26,21 @@ canvas = tk.Canvas(width=200, height=224, bg=YELLOW, highlightthickness=0)
 tomato_img = PhotoImage(file="tomato.png")
 canvas.create_image(100, 112, image=tomato_img)
 canvas.create_text(100, 130, text="00:00", fill="white", font=(FONT_NAME, 35, "bold"))
-#use grid instead of pack
-canvas.pack()
+canvas.grid(row=1, column=1)
 
 #Timer label
-timer_label = tk.Label(text="Timer")
+timer_label = tk.Label(text="Timer", bg=YELLOW, fg=GREEN, font=(FONT_NAME, 40, "bold"))
+timer_label.grid(row=0, column=1)
 
 #Label for checkmarks for each session completed, make green with fg=, find check from wiki
-checkmarks = tk.Label(text="✓")
+checkmarks = tk.Label(text="✓", bg=YELLOW, fg=GREEN, font=(FONT_NAME, 20))
+checkmarks.grid(row=3, column=1)
 
 #start and restart buttons
 start_button = tk.Button(text="Start")
+start_button.grid(row=2, column=0)
 
 restart_button = tk.Button(text="Restart")
+restart_button.grid(row=2, column=2)
 
 window.mainloop()
