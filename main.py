@@ -37,10 +37,10 @@ checkmarks = tk.Label(text="✓", bg=YELLOW, fg=GREEN, font=(FONT_NAME, 20))
 checkmarks.grid(row=3, column=1)
 
 #start and restart buttons
-start_button = tk.Button(text="Start")
+start_button = tk.Button(text="Start", highlightthickness=0)
 start_button.grid(row=2, column=0)
 
-restart_button = tk.Button(text="Restart")
+restart_button = tk.Button(text="Restart", highlightthickness=0)
 restart_button.grid(row=2, column=2)
 
 window.mainloop()
