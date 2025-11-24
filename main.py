@@ -40,6 +40,8 @@ def count_down(count):
     canvas.itemconfig(timer_text, text=f"{count_minutes}:{count_seconds}")
     if count > 0:
         window.after(1000, count_down, count - 1)
+    else:
+        start_timer()
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = tk.Tk()
