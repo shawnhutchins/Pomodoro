@@ -45,6 +45,11 @@ def count_down(count):
         window.after(1000, count_down, count - 1)
     else:
         start_timer()
+        checks = ""
+        for index in range(reps):
+            if index % 2 == 0:
+                checks += "✓"
+        checkmarks.config(text=checks)
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = tk.Tk()
@@ -62,7 +67,7 @@ timer_label = tk.Label(text="Timer", bg=YELLOW, fg=GREEN, font=(FONT_NAME, 40, "
 timer_label.grid(row=0, column=1)
 
 #Label for checkmarks for each session completed, make green with fg=, find check from wiki
-checkmarks = tk.Label(text="✓", bg=YELLOW, fg=GREEN, font=(FONT_NAME, 20))
+checkmarks = tk.Label(bg=YELLOW, fg=GREEN, font=(FONT_NAME, 20))
 checkmarks.grid(row=3, column=1)
 
 #start and restart buttons
