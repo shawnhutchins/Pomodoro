@@ -46,9 +46,9 @@ def count_down(count):
     else:
         start_timer()
         checks = ""
-        for index in range(reps):
-            if index % 2 == 0:
-                checks += "✓"
+        work_sessions = math.floor(reps / 2)
+        for _ in range(work_sessions):
+            checks += "✓"
         checkmarks.config(text=checks)
 
 # ---------------------------- UI SETUP ------------------------------- #
