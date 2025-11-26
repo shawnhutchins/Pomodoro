@@ -12,8 +12,12 @@ WORK_MIN = 25
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 reps = 0
+timer = None
 
-# ---------------------------- TIMER RESET ------------------------------- # 
+# ---------------------------- TIMER RESET ------------------------------- #
+
+def reset_timer():
+    window.after_cancel(timer)
 
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 def start_timer():
@@ -42,7 +46,8 @@ def count_down(count):
 
     canvas.itemconfig(timer_text, text=f"{count_minutes}:{count_seconds}")
     if count > 0:
-        window.after(1000, count_down, count - 1)
+        global timer
+        timer = window.after(1000, count_down, count - 1)
     else:
         start_timer()
         checks = ""
@@ -74,7 +79,7 @@ checkmarks.grid(row=3, column=1)
 start_button = tk.Button(text="Start", highlightthickness=0, command=start_timer)
 start_button.grid(row=2, column=0)
 
-restart_button = tk.Button(text="Restart", highlightthickness=0)
+restart_button = tk.Button(text="Restart", highlightthickness=0, command=reset_timer)
 restart_button.grid(row=2, column=2)
 
 window.mainloop()
