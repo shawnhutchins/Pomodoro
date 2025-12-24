@@ -18,6 +18,9 @@ timer = None
 
 def reset_timer():
     window.after_cancel(timer)
+    canvas.itemconfig(timer_text, text="00:00")
+    timer_label.configure(text="Timer", fg=GREEN)
+    checkmarks.configure(text="")
 
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 def start_timer():
