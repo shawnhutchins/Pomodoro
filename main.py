@@ -21,6 +21,8 @@ def reset_timer():
     canvas.itemconfig(timer_text, text="00:00")
     timer_label.configure(text="Timer", fg=GREEN)
     checkmarks.configure(text="")
+    global reps
+    reps = 0
 
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 def start_timer():
